@@ -6,19 +6,18 @@ tags:
 - reporting
 - ops
 - misc
-- development
 services:
   sentry:
     series: xenial
-    charm: cs:~omnivector/sentry-5
+    charm: cs:~omnivector/sentry
     num_units: 1
   redis:
     series: xenial
-    charm: cs:~omnivector/redis-2
+    charm: cs:~omnivector/redis
     num_units: 1
   postgresql:
     series: xenial
-    charm: cs:postgresql-164
+    charm: cs:postgresql
     num_units: 1
 relations:
   - - sentry:postgresql
