@@ -1,25 +1,27 @@
 description: |
   Sentry Decoupled Bundle
-series: xenial
+series: bionic
 tags:
 - sentry
 - reporting
 - ops
 - misc
 services:
+  haproxy:
+    charm: cs:haproxy
+    num_units: 1
   sentry:
-    series: xenial
     charm: cs:~omnivector/sentry
     num_units: 1
   redis:
-    series: xenial
     charm: cs:~omnivector/redis
     num_units: 1
   postgresql:
-    series: xenial
     charm: cs:postgresql
     num_units: 1
 relations:
+  - - sentry:http
+    - haproxy:reverseproxy
   - - sentry:postgresql
     - postgresql:db
   - - sentry:redis
