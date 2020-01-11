@@ -2,11 +2,16 @@
 
 Decoupled deploy all of [Sentry](https://sentry.io).
 
-In this bundle, each component of Sentry (webserver, redis, postgresql) all get deployed to
-separate instances.
+Each component of Sentry (webserver, redis, postgresql) deployed separate instances.
 
-Resources used: 3 machines
+Resources used: 4 machines
 
-* Postgresql
-* Redis
-* Sentry
+### Core Charm Components
+* [Sentry](https://jaas.ai/u/omnivector/sentry)
+* [HAProxy](https://jaas.ai/haproxy)
+* [PostgreSQL](https://jaas.ai/postgresql)
+* [Redis](https://jaas.ai/u/omnivector/redis)
+
+
+### Contact
+* [Omnivector Solutions](https://www.omnivector.solutions) <info@omnivector.solutions>
