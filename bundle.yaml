@@ -1,5 +1,5 @@
 description: |
-  Sentry Decoupled Bundle
+  Sentry Decoupled
 series: bionic
 tags:
 - sentry
@@ -9,15 +9,19 @@ tags:
 services:
   haproxy:
     charm: cs:haproxy
+    constraints: instance-type=t2.micro
     num_units: 1
   sentry:
     charm: cs:~omnivector/sentry
+    constraints: instance-type=t3.medium
     num_units: 1
   redis:
     charm: cs:~omnivector/redis
+    constraints: instance-type=t3.small
     num_units: 1
   postgresql:
     charm: cs:postgresql
+    constraints: instance-type=t3.medium
     num_units: 1
 relations:
   - - sentry:http
